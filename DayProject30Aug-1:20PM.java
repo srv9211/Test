@@ -8,8 +8,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Task {
-	public static String[] tasks = {"Hero Banner   "   , "Featured News ", "Contact Us    "};
-	
 	public static ArrayList<ArrayList<Integer>> backendPeopleDates, frontendPeopleDates, QAPeopleDates;
 	
 	public static ArrayList<String> taskName = new ArrayList();
@@ -39,7 +37,6 @@ public class Task {
 	public static int[] frontendWorkload;
 	public static int[] QAWorkload;
 	
-
 	// Indices
 	// 0 -> Hero banner
 	// 1 -> News
@@ -89,9 +86,6 @@ public class Task {
 	public static void main(String[] args) {
 		// buffer input
 		readingInput();
-		
-		
-		
 		
 		backendWorkload = new int[workloadSheet.size()-1];
 		frontendWorkload = new int[workloadSheet.size()-1];
@@ -171,8 +165,7 @@ public class Task {
 		feCurr = new int[totalFrontendPeople];
 		qaCurr = new int[totalQAPeople];
 		
-		
-		
+		// busy or not at specific time
 		isBackendBusy = new boolean[totalBackendPeople];
 		isFrontendBusy = new boolean[totalFrontendPeople];
 		isQualityBusy = new boolean[totalQAPeople];
@@ -181,27 +174,10 @@ public class Task {
 		
 		output = new String[totalPeople][totalNumberOfDates];
 		
-
-
-//		backlogBackend.add(0);
-//		backlogBackend.add(1);
-//		backlogBackend.add(2);
-		
+		// back-end backlog
 		for(int i=0; i<taskName.size(); i++) {
 			backlogBackend.add(i);
 		}
-
-//		0 is for Hero Banner
-//		1 is for Featured News
-//		2 is for Contact Us
-		
-		
-		// for record 
-//		HashMap<Integer, String> hm = new HashMap<>();
-//		
-//		for(int id : backendOutputID) hm.put(id, "BE");
-//		for(int id : frontendOutputID) hm.put(id, "FE");
-//		for(int id : QAOutputID) hm.put(id, "QA");
 //		
 		for(int date=0; date<totalNumberOfDates; date++) {
 			// For Back-end
